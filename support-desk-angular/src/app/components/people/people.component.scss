@@ -5,33 +5,13 @@
     justify-content: center;
     margin: 1rem auto 2rem;
     min-height: 80vh;
-
-    @media (max-width: 768px) {
-      margin: 0.5rem;
-    }
   }
 
   mat-card {
     width: 20vw;
-    height: 35vh;
+    height: 38vh;
     margin: 1rem;
     padding: 1rem;
-
-    @media (max-width: 1025px) {
-      width: 35vw;
-      height: auto;
-    }
-
-    @media (max-width: 768px) {
-      width: 55vw;
-      height: auto;
-      margin: 0.5rem;
-      padding: 0.5rem;
-    }
-
-    @media (max-width: 475px) {
-      width: 80vw;
-    }
 
     &.show-details {
       cursor: pointer;
@@ -39,8 +19,8 @@
       mat-card-title {
         height: 7.5rem;
 
-        img {
-          height: 6rem;
+        mat-icon {
+          bottom: 6.5rem;
         }
       }
     }
@@ -48,7 +28,7 @@
     mat-card-title {
       margin: 0;
       padding: 0;
-      height: 11.5rem;
+      height: 10rem;
 
       img {
         width: 100%;
@@ -67,10 +47,19 @@
     }
 
     mat-card-content {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      background-color: #fff;
+      padding: 1rem 0 0;
 
-      .name {
-        font-size: 1.2rem;
-        ;
+      p {
+        margin: 0;
+
+        &.name {
+          font-size: 1.2rem;
+          margin-bottom: 0.5rem;
+        }
       }
     }
   }
@@ -85,5 +74,31 @@
     mat-icon {
       margin: 2rem auto;
       transform: scale(4);
+    }
+  }
+
+  @media (max-width: 1025px) {
+    mat-card {
+      width: 35vw;
+      height: auto;
+    }
+  }
+
+  @media (max-width: 768px) {
+    :host {
+      margin: 0.5rem;
+
+      mat-card {
+        width: 55vw;
+        height: auto;
+        margin: 0.5rem;
+        padding: 0.5rem;
+      }
+    }
+  }
+
+  @media (max-width: 475px) {
+    mat-card {
+      width: 80vw;
     }
   }
